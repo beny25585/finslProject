@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="final.css">
+</head>
+<body>
+    <!-- Header with login button -->
+    <header>
+        <h1>Product Details</h1>
+        <button id="loginButton">Log In</button>
+    </header>
+
+    <!-- Main content section for product details -->
+    <main>
+        <div class="product-detail">
+            <h2>Product Name</h2>
+            <img src="product-image.jpg" alt="Product Image"> <!-- Placeholder image -->
+            <p>Product description goes here.</p>
+
+            <!-- Size selection -->
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+
+            <!-- Color selection -->
+            <label for="color">Color:</label>
+            <select id="color">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+
+            <button>Add to Cart</button>
+        </div>
+    </main>
+
+    <!-- Login popup -->
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <h2>Log In</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
