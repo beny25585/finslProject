@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping App</title>
+    <link rel="stylesheet" href="/css/final.css">
+</head>
+<body>
+    <header class="header-container">
+        <!-- First Header -->
+        <div class="top-header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <nav class="top-nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <div class="icon-cart">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                    </svg>
+                    <span>0</span>
+                </div>
+                <button id="loginButton" class="login-button">Log In</button>
+            </nav>
+        </div>
+
+        <!-- Second Header -->
+        <div class="main-header">
+            <h1>Shopping Name</h1>
+        </div>
+    </header> 
+
+    <main class="container">
+        <!-- Repeat this block for as many items as you need -->
+        <div class="listProduct">
+             <div class="items">
+                 <img src="https://via.placeholder.com/150" alt="Placeholder Image" class="photo">
+                 <div class="items-name">Shorts</div>
+                 <div class="items-price">$50</div>
+                 <button class="addBtn">add to cart</button>
+            </div>    
+        </div>
+        <!-- Add more itemss as needed -->
+    </main>
+
+  <!-- Shopping Cart Section -->
+<div class="cartTab">
+    <h1>Shopping Cart</h1>
+    <div class="listCart">
+        <!-- items will be dynamically added here -->
+        <div class="items-in-cart">
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image" class="photo">
+            <div class="items-name">Shorts</div>
+            <div class="items-price">$50</div>
+            <div class="items-amunt">
+                <span class="minus">-</span>
+                <span>1</span>
+                <span class="plus">+</span>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="close">Close</button>
+            <button class="checkOut">Check Out</button>
+        </div>
+    </div>
+</div>
+
+<!-- Login popup -->
+<div id="loginPopup" class="popup">
+    <div class="popup-content">
+        <span id="closePopup" class="close">&times;</span>
+        <h2>Log In</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+</div>
+
+
+    <script src="/js/script.js"></script>
+    <script src="/js/cart.js"></script>
+</body>
+</html>
