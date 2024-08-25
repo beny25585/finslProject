@@ -17,7 +17,7 @@ const addDataToHTML=() =>{
     if(listProduct.length > 0){
         listProduct.forEach(product => {
             const newProduct =document.createElement('div');
-            newProduct.classList.add('listProduct');
+            newProduct.classList.add('product-item');
             newProduct.dataset.id = product.id;
             newProduct.innerHTML=`
             <div class="items">
@@ -28,23 +28,31 @@ const addDataToHTML=() =>{
             <div>
             `;
             listProductHTML.appendChild(newProduct);
+            
         })
     }
 }
-listProductHTML.addEventListener('click', (event)=>{
-    let positionClick =event.target;
-    if(positionClick.classList.contains('addBtn')){
-        const productId=positionClick.parentElement.dataset.id;
-        alert(productId)
+listProductHTML.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    if (positionClick.classList.contains('addBtn')) {
+        // Log the closest element
+        let closestElement = positionClick.closest('.product-item');
+        console.log('Closest Element:', closestElement);
+
+        // Now log the data-id
+        let productId = closestElement ? closestElement.dataset.id : 'No product item found';
+        console.log('Product ID:', productId);
     }
-})
+});
+
 const initApp =() =>{
     fetch('/product/products.json')
     .then(Response => Response.json())
     .then(data => {
         listProduct=data;
-        console.log(listProduct)
         addDataToHTML();
     })
 }
 initApp();
+
+
